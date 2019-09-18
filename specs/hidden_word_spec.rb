@@ -27,6 +27,8 @@ class HiddenWordTest < MiniTest::Test
     assert_equal("******", @hidden_word_1.displayed_word)
   end
 
+ 
+
   # def test_hidden_word_true_false__true
   #   assert_equal(true, @hidden_word_1.check_letter_included())
   # end
