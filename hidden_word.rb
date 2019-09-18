@@ -1,6 +1,6 @@
 class HiddenWord
 
-  attr_reader :word, :displayed_word, :guess
+  attr_reader :word, :displayed_word, :guess, :response
 
   def initialize(word)
 
@@ -9,6 +9,7 @@ class HiddenWord
     # @displayed_word.gsub( / @word / , "*")
 
     @guess = ""
+    @reponse = ""
 
   end
 
@@ -23,12 +24,13 @@ class HiddenWord
 
   def receive_guess(guess)
     if !@word.include?(guess)
-      return nil
+      @response = "Wrong guess! Try again."
     end
     length = @word.length - 1
     for position in (0..length)
       if @word[position] == guess
         @displayed_word[position] = guess
+        @response = @displayed_word
       end
     end
   end

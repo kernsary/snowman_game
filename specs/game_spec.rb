@@ -20,6 +20,8 @@ class GameTest < MiniTest::Test
     @guess_4 = "d"
     @guess_5 = "n"
 
+    @guess_6 = "x"
+
   end
 
   def test_game_has_player
@@ -42,7 +44,12 @@ class GameTest < MiniTest::Test
 
   def test_hidden_word_has_letter__correct
     @game_1.pass_guess(@guess_1)
-    assert_equal("****e*", @hidden_word_1.displayed_word)
+    assert_equal("****e*", @hidden_word_1.response)
+  end
+
+  def test_hidden_word_has_letter__wrong
+    @game_1.pass_guess(@guess_6)
+    assert_equal("Wrong guess! Try again.", @hidden_word_1.response)
   end
 
 end
