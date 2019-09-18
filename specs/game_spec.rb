@@ -16,5 +16,9 @@ class GameTest < MiniTest::Test
 
   end
 
+  def test_game_has_player
+    assert_equal(@player_1, @game_1.player)
+  end
+
 
 end
