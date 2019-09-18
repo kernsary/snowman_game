@@ -9,8 +9,11 @@ class Game
 
   end
 
-  def pass_guess(guess)
+  def pass_guess(guess, player)
     @hidden_word.receive_guess(guess)
+    if @hidden_word.response == "Wrong guess! Try again."
+      player.lives -= 1
+    end
   end
 
   def store_guess(guess)
