@@ -20,5 +20,9 @@ class GameTest < MiniTest::Test
     assert_equal(@player_1, @game_1.player)
   end
 
+  def test_game_has_word
+    assert_equal(@hidden_word_1, @game_1.hidden_word)
+  end
+
 
 end

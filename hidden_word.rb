@@ -1,8 +1,11 @@
 class HiddenWord
 
+attr_reader :word, :displayed_word
+
  def initialize(word)
+
    @word = word
-   @display_word = "*" * word.length()
+   @displayed_word = "*" * word.length()
 
  end
 
