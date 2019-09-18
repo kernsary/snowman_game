@@ -8,7 +8,7 @@ class HiddenWordTest < MiniTest::Test
 
   def setup
 
-    @hidden_word_1 = HiddenWord.new("Hidden")
+    @hidden_word_1 = HiddenWord.new("Hidden", "e")
 
     @player_1 = Player.new("Les")
 
@@ -23,6 +23,10 @@ class HiddenWordTest < MiniTest::Test
 
   def test_hidden_word_has_displayed_word
     assert_equal("******", @hidden_word_1.displayed_word)
+  end
+
+  def test_hidden_word_true_false__true
+    assert_equal(true, @hidden_word_1.check_letter_included())
   end
 
 end
