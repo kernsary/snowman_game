@@ -1,18 +1,23 @@
 class HiddenWord
 
-  attr_reader :word, :displayed_word
+  attr_reader :word, :displayed_word, :guess
 
-  def initialize(word, guessed_letter)
+  def initialize(word)
 
     @word = word
     @displayed_word = "*" * word.length()
-    @guessed_letter = guessed_letter
+    @guess = ""
 
   end
 
-  def check_letter_included()
-    return @word.include?(@guessed_letter)
+  def receive_guess(guess)
+    @guess = guess
+    return @guess
   end
+
+  # def check_letter_included(guess)
+  #   return @word.include?(guess)
+  # end
 
 
 end
