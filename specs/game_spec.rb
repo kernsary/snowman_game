@@ -57,4 +57,14 @@ class GameTest < MiniTest::Test
     assert_equal(5, @player_1.lives)
   end
 
+def test_result__won
+    @game_1.pass_guess(@guess_1, @player_1)
+    assert_equal("Won", @game_1.pass_guess(@guess_1, @player_1))
+end
+
+def test_result__loss
+    @game_1.pass_guess(@guess_6, @player_1)
+    assert_equal("Lost", @game_1.pass_guess(@guess_6, @player_1))
+end
+
 end

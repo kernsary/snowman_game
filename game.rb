@@ -7,12 +7,19 @@ class Game
     @hidden_word = hidden_word
     @guessed_letters = []
 
+
   end
 
   def pass_guess(guess, player)
     @hidden_word.receive_guess(guess)
+    if !@hidden_word.displayed_word.include?("*")
+      return "Won"
+    end
     if @hidden_word.response == "Wrong guess! Try again."
       player.lives -= 1
+    end
+    if player.lives = 0
+      return "Lost"
     end
   end
 
