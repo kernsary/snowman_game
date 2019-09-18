@@ -33,7 +33,7 @@ class GameTest < MiniTest::Test
 
   def test_guessed_letter_has_been_stored
     @game_1.store_guess(@guess_1)
-    assert_equal(["3"], @game_1.guessed_letters)
+    assert_equal(["e"], @game_1.guessed_letters)
   end
 
 

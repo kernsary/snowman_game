@@ -13,4 +13,8 @@ class Game
     @hidden_word.receive_guess(guess)
   end
 
+  def store_guess(guess)
+    @guessed_letters.push(guess)
+  end
+
 end
